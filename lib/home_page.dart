@@ -37,9 +37,12 @@ class _HomePageState extends State<HomePage> {
 
               Future.delayed(Duration(milliseconds: 300)).then((_) {
                 final nextMove = getRandomMove(_fen);
-                setState(() {
-                  _fen = makeMove(_fen, nextMove);
-                });
+
+                if (nextMove != null) {
+                  setState(() {
+                    _fen = makeMove(_fen, nextMove);
+                  });
+                }
               });
             }
           },
