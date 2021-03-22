@@ -49,7 +49,7 @@ packages:
       name: chess
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.5"
+    version: "0.6.6"
   chess_vectors_flutter:
     dependency: transitive
     description:
@@ -119,10 +119,10 @@ packages:
   flutter_stateless_chessboard:
     dependency: "direct main"
     description:
-      path: "../flutter_chessboard"
-      relative: true
-    source: path
-    version: "0.0.4"
+      name: flutter_stateless_chessboard
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.6"
   flutter_test:
     dependency: "direct dev"
     description: flutter

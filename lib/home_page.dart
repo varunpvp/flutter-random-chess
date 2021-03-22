@@ -1,5 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart';
+import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart' as cb;
 
 import 'utils.dart';
 
@@ -13,16 +15,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final viewport = MediaQuery.of(context).size;
+    final size = min(viewport.height, viewport.width);
 
     return Scaffold(
       appBar: AppBar(
         title: Text("Random Chess"),
       ),
       body: Center(
-        child: Chessboard(
+        child: cb.Chessboard(
           fen: _fen,
-          size: size.width,
+          size: size,
+          orientation: cb.Color.WHITE,
           onMove: (move) {
             final nextFen = makeMove(_fen, {
               'from': move.from,
