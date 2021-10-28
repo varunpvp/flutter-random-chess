@@ -18,14 +18,13 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_stateless_chessboard: ^0.0.6
-
-  chess: ^0.6.5
+  chess: ^0.7.0
+  flutter_stateless_chessboard: ^0.0.7
 
 
   # The following adds the Cupertino Icons font to your application.

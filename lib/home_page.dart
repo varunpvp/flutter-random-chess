@@ -1,7 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart' as cb;
+import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart'
+    as cb;
 
 import 'utils.dart';
 
@@ -40,11 +41,12 @@ class _HomePageState extends State<HomePage> {
               });
 
               Future.delayed(Duration(milliseconds: 300)).then((_) {
-                final nextMove = getRandomMove(_fen);
+                final computerMove = getRandomMove(_fen);
+                final computerFen = makeMove(_fen, computerMove);
 
-                if (nextMove != null) {
+                if (computerMove != null && computerFen != null) {
                   setState(() {
-                    _fen = makeMove(_fen, nextMove);
+                    _fen = computerFen;
                   });
                 }
               });
