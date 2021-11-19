@@ -24,7 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   chess: ^0.7.0
-  flutter_stateless_chessboard: ^0.0.7
+  flutter_stateless_chessboard:
+    path: ../flutter_chessboard
 
 
   # The following adds the Cupertino Icons font to your application.
