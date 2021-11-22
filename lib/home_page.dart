@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart';
-import 'package:flutter_stateless_chessboard/types.dart';
 
 import 'utils.dart';
 
@@ -28,7 +27,7 @@ class _HomePageState extends State<HomePage> {
         child: Chessboard(
           fen: _fen,
           size: size,
-          orientation: ChessColor.WHITE,
+          orientation: BoardColor.WHITE,
           onPromote: () {
             return showDialog<PieceType>(
               context: context,
@@ -40,27 +39,19 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       ListTile(
                         title: Text("Queen"),
-                        onTap: () {
-                          navigator.pop(PieceType.QUEEN);
-                        },
+                        onTap: () => navigator.pop(PieceType.QUEEN),
                       ),
                       ListTile(
                         title: Text("Rook"),
-                        onTap: () {
-                          navigator.pop(PieceType.ROOK);
-                        },
+                        onTap: () => navigator.pop(PieceType.ROOK),
                       ),
                       ListTile(
                         title: Text("Bishop"),
-                        onTap: () {
-                          navigator.pop(PieceType.BISHOP);
-                        },
+                        onTap: () => navigator.pop(PieceType.BISHOP),
                       ),
                       ListTile(
                         title: Text("Knight"),
-                        onTap: () {
-                          navigator.pop(PieceType.KNIGHT);
-                        },
+                        onTap: () => navigator.pop(PieceType.KNIGHT),
                       ),
                     ],
                   ),
