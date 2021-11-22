@@ -28,6 +28,21 @@ class _HomePageState extends State<HomePage> {
           fen: _fen,
           size: size,
           orientation: BoardColor.WHITE,
+          buildPiece: (piece, size) {
+            if (piece == Piece.WHITE_PAWN) {
+              return Icon(
+                Icons.person,
+                size: size,
+                color: Colors.white,
+              );
+            } else if (piece == Piece.BLACK_PAWN) {
+              return Icon(
+                Icons.person,
+                size: size,
+                color: Colors.black,
+              );
+            }
+          },
           onPromote: () {
             return showDialog<PieceType>(
               context: context,
