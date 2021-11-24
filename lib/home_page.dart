@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_stateless_chessboard/flutter_stateless_chessboard.dart';
+import 'package:flutter_stateless_chessboard/models/blocked_square.dart';
 
 import 'utils.dart';
 
@@ -25,9 +26,30 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: Chessboard(
+          blockedSquares: [
+            BlockedSquare(
+              square: "a8",
+              builder: (square) => Container(
+                color: Colors.red,
+                child: SizedBox.square(
+                  dimension: square.size,
+                ),
+              ),
+            ),
+          ],
           fen: _fen,
           size: size,
-          orientation: BoardColor.WHITE,
+          buildSquare: (color, size) {
+            return Container(
+              width: size,
+              height: size,
+              color:
+                  color == BoardColor.WHITE ? Colors.white30 : Colors.black26,
+              child:
+                  Icon(color == BoardColor.WHITE ? Icons.check : Icons.close),
+            );
+          },
+          orientation: BoardColor.BLACK,
           buildPiece: (piece, size) {
             if (piece == Piece.WHITE_PAWN) {
               return Icon(
